@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4>Create Event</h4>
+</div>
+<div class="modal-body">
+    <label class="col-form-label" for="title">Title</label>
+    <input type="text" class="form-control" id="title" [(ngModel)]="title">
+
+    <label class="col-form-label" for="price">Price</label>
+    <input type="text" class="form-control" id="price" [(ngModel)]="price">
+
+    <label class="col-form-label" for="date">Date</label>
+    <input type="date" class="form-control" id="date" [(ngModel)]="date">
+
+    <label class="col-form-label" for="description">Description</label>
+    <textarea id="description" class="form-control" [(ngModel)]="description" data-gramm_editor="true"></textarea>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-primary" (click)="createEvent()">Save</button>
+</div>

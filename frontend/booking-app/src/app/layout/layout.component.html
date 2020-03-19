@@ -1,0 +1,81 @@
+<!-- <header class="main-navigation">
+    <div class="main-navigation__logo">
+        <h1>Event Management</h1>
+    </div>
+    <nav class="main-navigation__items">
+        <ul>
+            <li>
+                <a [routerLink]="['/Auth']" routerLinkActive="Active" >Authenticate</a>
+            </li>
+            <li>
+                <a [routerLink]="['/Events']" routerLinkActive="Active" >Events</a>
+            </li>
+            <li>
+                <a [routerLink]="['/Bookings']" routerLinkActive="Active" >Bookings</a>
+            </li>
+            <li style="right: auto;">
+                <a style="cursor: pointer;" (click)="logout()" >Logout</a>
+            </li>
+        </ul>
+    </nav>
+</header> -->
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar" *ngIf="isLoggedIn$ | async">
+        <div class="sidebar-header">
+            <h3>My demo</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Demo</p>
+            <!-- <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="#">Page 1</a>
+          </li>
+          <li>
+            <a href="#">Page 2</a>
+          </li>
+          <li>
+            <a href="#">Page 3</a>
+          </li>
+        </ul>
+      </li> -->
+            <li [routerLinkActive]="['active']">
+                <a [routerLink]="[ '/Home' ]">Home</a>
+            </li>
+
+            <li [routerLinkActive]="['active']">
+                <a [routerLink]="['/Events']" routerLinkActive="Active">Events</a>
+            </li>
+
+            <li [routerLinkActive]="['active']">
+                <a [routerLink]="['/Bookings']" routerLinkActive="Active">Bookings</a>
+            </li>
+            <li>
+                <a style="cursor: pointer;" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div style="width: 100%;">
+        <div id="content" class="container-fluid" *ngIf="isLoggedIn$ | async">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+
+                </div>
+            </nav>
+        </div>
+
+        <hr size="5px">
+        <div class="main-class">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
